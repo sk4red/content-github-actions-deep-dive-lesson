@@ -117,9 +117,8 @@ jobs:
       - name: Update function code
         run: |
             aws lambda update-function-code \
-
-              --function-name <YOUR FUNCTION NAME HERE> \
-              --s3-bucket <YOUR BUCKET NAME HERE> \
+              --function-name my-function \
+              --s3-bucket furmidge \
               --s3-key ${{ github.repository }}/${{ github.sha }}.zip \
               --publish
 
@@ -134,9 +133,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           CONFIG_FILE: mkdocs.yaml
-              --function-name my-function \
-              --s3-bucket furmidge \
-              --s3-key ${{ github.repository }}/${{ github.sha }}.zip \
-              --publish
+         
 
 
